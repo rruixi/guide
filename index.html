@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的工具导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .nav-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-card:hover::before {
+            left: 100%;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-card.calc {
+            border-top: 4px solid #FF6B6B;
+        }
+
+        .nav-card.lifegame {
+            border-top: 4px solid #4ECDC4;
+        }
+
+        .nav-card.bbn {
+            border-top: 4px solid #FFE66D;
+        }
+
+        .nav-card.stock {
+            border-top: 4px solid #95E1D3;
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+
+        .card-link::after {
+            content: ' →';
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 工具导航</h1>
+            <p>探索我的个人工具集合</p>
+        </div>
+
+        <div class="nav-grid">
+            <!-- 函数计算器 -->
+            <a href="https://rruixi.github.io/calc/" class="nav-card calc" target="_blank">
+                <div class="card-icon">🧮</div>
+                <div class="card-title">函数计算器</div>
+                <div class="card-description">
+                    功能强大的函数计算工具，支持多种数学函数和表达式计算。
+                </div>
+                <div class="card-link">进入工具</div>
+            </a>
+
+            <!-- 康威生命游戏 -->
+            <a href="https://rruixi.github.io/lifegame/" class="nav-card lifegame" target="_blank">
+                <div class="card-icon">🎮</div>
+                <div class="card-title">康威生命游戏</div>
+                <div class="card-description">
+                    经典的元胞自动机模拟，观察生命的演化与规律。
+                </div>
+                <div class="card-link">进入游戏</div>
+            </a>
+
+            <!-- 忙碌海狸函数 -->
+            <a href="https://rruixi.github.io/bbn/" class="nav-card bbn" target="_blank">
+                <div class="card-icon">🦫</div>
+                <div class="card-title">忙碌海狸函数</div>
+                <div class="card-description">
+                    可视化探索忙碌海狸函数，理解计算复杂性的极限。
+                </div>
+                <div class="card-link">查看可视化</div>
+            </a>
+
+            <!-- 期货交易模拟 -->
+            <a href="https://rruixi.github.io/stock/" class="nav-card stock" target="_blank">
+                <div class="card-icon">📈</div>
+                <div class="card-title">期货交易模拟</div>
+                <div class="card-description">
+                    实时交易模拟平台，学习期货交易的基本策略。
+                </div>
+                <div class="card-link">开始交易</div>
+            </a>
+        </div>
+
+        <footer>
+            <p>✨ Created by rruixi | 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
