@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -35,12 +35,12 @@
         .header h1 {
             font-size: 3em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .header p {
             font-size: 1.2em;
-            opacity: 0.9;
+            opacity: 0.8;
         }
 
         .nav-grid {
@@ -51,13 +51,15 @@
         }
 
         .nav-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 30px;
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             position: relative;
             overflow: hidden;
@@ -70,7 +72,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -80,7 +82,8 @@
 
         .nav-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .nav-card.calc {
@@ -108,11 +111,11 @@
             font-size: 1.5em;
             font-weight: 600;
             margin-bottom: 10px;
-            color: #333;
+            color: #fff;
         }
 
         .card-description {
-            color: #666;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.95em;
             line-height: 1.6;
             margin-bottom: 15px;
@@ -120,14 +123,14 @@
 
         .card-link {
             display: inline-block;
-            color: #667eea;
+            color: #4ECDC4;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .card-link:hover {
-            color: #764ba2;
+            color: #95E1D3;
             transform: translateX(5px);
         }
 
@@ -162,8 +165,7 @@
 
         footer {
             text-align: center;
-            color: white;
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.9em;
         }
     </style>
@@ -216,7 +218,7 @@
                 <div class="card-link">开始交易</div>
             </a>
         </div>
-    
+
         <footer>
             <p>
                 <img src="https://raw.githubusercontent.com/rruixi/guide/9862160752797d052acf24f53de8896177299ce6/anontokyosmall.png" alt="logo" class="footer-img">
